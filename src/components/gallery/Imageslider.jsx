@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import rightImg from '../../assets/events/rightDel.png';
 import leftImg from '../../assets/events/leftDel.png';
 
@@ -27,13 +29,37 @@ function SamplePrevArrow(props) {
 }
 
 function VideoText() {
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 1000);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
-        <div className='[@media_screen_and(max-width:1000px)]:flex-col'>
-            <video className='[@media_screen_and(max-width:1000px)]:w-4/5' src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" width="60%" height="auto" controls="controls" autoplay="true" />
-            <p className='inline-block w-[fit-content] h-auto text-[20px]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of </p>
+        <div
+            style={{
+                flexDirection: isSmallScreen ? "column" : "row"
+            }}
+            className='flex justify-center items-center md:flex-col'
+        >
+            <video className='w-10/12 md:w-8/12' src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" width="60%" height="auto" controls autoPlay />
+            <p className='inline-block h-auto md:text-lg sm:text-sm'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, ipsum. Facere dolorum error dolorem ea dolores impedit sunt recusandae sint rem odit. Dolorem molestiae nihil officia animi repudiandae voluptate quos.
+            </p>
         </div>
-    )
+    );
 }
+
 
 const Imageslider = () => {
 
@@ -75,7 +101,7 @@ const Imageslider = () => {
     };
 
     return (
-        <div className='flex justify-center items-center ml-[0] mr-[0] my-[0]'>
+        <div className='flex justify-center items-center ml-[0] mr-[0] my-[30px]'>
             <Slider {...settings} style={{ maxWidth: "90%", maxHeight: "90vh" }}>
                 <div>
                     <VideoText />
@@ -100,4 +126,4 @@ const Imageslider = () => {
     )
 }
 
-export default Imageslider
+export default Imageslider;
