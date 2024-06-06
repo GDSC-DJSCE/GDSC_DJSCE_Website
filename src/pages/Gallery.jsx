@@ -25,24 +25,24 @@ import Burgers from "../assets/gallery/Burgers.mov"
 
 
 const mediaItems = [
-    { type: 'image', source: Img3 },
-    { type: 'image', source: CoreBack },
-    { type: 'video', source: Samay },
-    { type: 'image', source: Img5 },
-    { type: 'video', source: Vid1 },
-    { type: 'video', source: Vid2 },
-    { type: 'image', source: Img6 },
-    { type: 'image', source: Img7 },
-    { type: 'image', source: Img8 },
-    { type: 'video', source: Burgers},
-    { type: 'image', source: Img4 },
-    { type: 'image', source: WOC1 },
-    { type: 'image', source: WOC2 },
-    { type: 'video', source: Day1},
-    { type: 'image', source: Img9 },
-    { type: 'image', source: Img1 },
-    { type: 'image', source: Img2 },
-    { type: 'video', source: Quiz},
+  { type: 'image', source: Img3 },
+  { type: 'image', source: CoreBack },
+  { type: 'video', source: Samay },
+  { type: 'image', source: Img5 },
+  { type: 'video', source: Vid1 },
+  { type: 'video', source: Vid2 },
+  { type: 'image', source: Img6 },
+  { type: 'image', source: Img7 },
+  { type: 'image', source: Img8 },
+  { type: 'video', source: Burgers },
+  { type: 'image', source: Img4 },
+  { type: 'image', source: WOC1 },
+  { type: 'image', source: WOC2 },
+  { type: 'video', source: Day1 },
+  { type: 'image', source: Img9 },
+  { type: 'image', source: Img1 },
+  { type: 'image', source: Img2 },
+  { type: 'video', source: Quiz },
 ];
 
 const Gallery = () => {
@@ -68,11 +68,11 @@ const Gallery = () => {
   return (
     <>
       {data.media && (
-        <div className='w-full h-full bg-[rgba(0,0,0,0.5)] fixed top-[0] flex justify-center items-center'>
+        <div className='w-full h-full bg-[rgba(0,0,0,0.5)] fixed top-[0] flex justify-center items-center z-50'>
           <button className='absolute top-[10px] right-[20px] [rotate:45deg] rounded-[50%] text-[60px] h-auto p-[none] bg-none border-[none] text-[white] cursor-pointer' onClick={() => mediaAction('close')}>
             +
           </button>
-          <button className='fixed top-2/4 bg-none border-[none] left-[10px] text-center cursor-pointer' onClick={() => mediaAction('prev-media')}>
+          <button className='fixed top-2/4 bg-none border-[none] left-[10px] text-center cursor-pointer z-50' onClick={() => mediaAction('prev-media')}>
             <img src={leftImg} alt='Error' style={{ width: '50px', height: '50px' }} />
           </button>
           {data.media.type === 'image' ? (
@@ -83,7 +83,7 @@ const Gallery = () => {
               Your browser does not support the video tag.
             </video>
           )}
-          <button className='fixed top-2/4 bg-none border-[none] right-[10px] text-center cursor-pointer' onClick={() => mediaAction('next-media')} style={{ width: '50px', height: '50px' }}>
+          <button className='fixed top-2/4 bg-none border-[none] right-[10px] text-center cursor-pointer z-50' onClick={() => mediaAction('next-media')} style={{ width: '50px', height: '50px' }}>
             <img src={rightImg} alt='Error' />
           </button>
         </div>

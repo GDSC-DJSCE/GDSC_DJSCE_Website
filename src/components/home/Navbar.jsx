@@ -20,9 +20,9 @@ const Navbar = () => {
               to="/"
             >
               <div aria-hidden="true" className="flex space-x-1 dark">
-              <img src="GDSCLogo.jpg" className="w-60 h-16" alt=""/>
+                <img src="GDSCLogo.jpg" className="w-60 h-16" alt="" />
               </div>
-              
+
             </Link>
             <div className="sm:hidden">
               <button
@@ -60,47 +60,46 @@ const Navbar = () => {
           </div>
           <div
             id="navbar-image-and-text-1"
-            className={`hs-collapse overflow-hidden  transition-all duration-300 basis-full grow sm:block ${
-              isMobileMenuOpen ? "block   bg-gray-50 border border-zinc-100 rounded-3xl p-5 font-semibold mt-6 " : "hidden  p-0 mt-0"
-            }`}
+            className={`hs-collapse overflow-hidden  transition-all duration-300 basis-full grow sm:block ${isMobileMenuOpen ? "block   bg-gray-50 border border-zinc-100 rounded-3xl p-5 font-semibold mt-6 " : "hidden  p-0 mt-0"
+              }`}
           >
             <div className="flex flex-col gap-5 lg:gap-10  sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
               <Link
-                href="/"
+                to="/"
                 className="font-medium nav-item text-gray-600 dark:text-zinc-200   "
                 aria-current="page"
               >
                 Home
               </Link>
-               <Link to="/team"
+              <Link to="/team"
                 className="font-medium nav-item text-gray-600 dark:text-zinc-200 "
                 aria-current="page"
               >
                 Our Team
               </Link>
               <Link to="/events"
-              className="font-medium nav-item text-gray-600 dark:text-zinc-200 "
+                className="font-medium nav-item text-gray-600 dark:text-zinc-200 "
                 aria-current="page"
               >
-               Events
+                Events
               </Link>
               <Link to="/gallery"
-              className="font-medium nav-item text-gray-600 dark:text-zinc-200 "
+                className="font-medium nav-item text-gray-600 dark:text-zinc-200 "
                 aria-current="page"
               >
-               Gallery
+                Gallery
               </Link>
               <Link to="/contactus"
-              className="font-medium nav-item text-gray-600 dark:text-zinc-200 "
+                className="font-medium nav-item text-gray-600 dark:text-zinc-200 "
                 aria-current="page"
               >
-              Contact us
+                Contact us
               </Link>
             </div>
           </div>
-          
 
-<style jsx>{`
+
+          <style jsx>{`
 .nav-item {
   font-family: 'Barlow' !important;
   font-size: 18px;
